@@ -1,14 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FF5722"
-    tools:context=".ui.StatusFragment">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:orientation="vertical"
+              android:layout_height="match_parent"
+              tools:context=".ui.ChatsFragment">
+    <LinearLayout android:layout_width="wrap_content"
+                  android:paddingBottom="16dp"
+                  android:layout_height="wrap_content">
+        <ImageView
+                android:id="@+id/imgUserProfile"
+                android:layout_width="wrap_content"
+                 android:layout_margin="8dp"
+                android:layout_gravity="center"
+                android:background="@android:drawable/ic_menu_camera"
+                android:layout_height="wrap_content"/>
+        <LinearLayout android:layout_width="wrap_content"
+                      android:orientation="vertical"
+                      android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+            <TextView
+                    android:id="@+id/txtUserName"
+                    android:layout_width="wrap_content"
+                      android:text="ESRA EKEN"
+                      android:textStyle="bold"
 
-</FrameLayout>
+                      android:layout_height="wrap_content"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:paddingTop="8dp"
+                      android:text="Merhaba kullanıcı, bugün neler yapıyorsun ?"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:layout_width="match_parent"
+              android:textStyle="bold"
+              android:text="Latest Updates"
+
+              android:layout_height="wrap_content"/>
+    <FrameLayout android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recycStatusRecentList"
+    />
+    </FrameLayout>
+
+    <TextView android:layout_width="match_parent"
+              android:textStyle="bold"
+              android:text="VIEWED UPDATE"
+
+              android:layout_height="wrap_content"/>
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recycStatusViewedList"
+    />
+    <TextView android:layout_width="match_parent"
+              android:textStyle="bold"
+              android:text="MUTED UPDATE"
+
+              android:layout_height="wrap_content"/>
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recycStatusMutedList"
+    />
+</LinearLayout>

@@ -6,16 +6,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import io.androidedu.hoop.R
-import io.androidedu.hoop.model.ChatModel
+import io.androidedu.hoop.model.ChatEntity
 
-// Code with ❤️
-//┌─────────────────────────────┐
-//│ Created by Gökhan ÖZTÜRK    │
-//│ ─────────────────────────── │
-//│ GokhanOzturk@AndroidEdu.IO  │            
-//│ ─────────────────────────── │
-//│ 13.04.2019 - 13:34          │
-//└─────────────────────────────┘
+
 
 class ChatListViewHolder(parent: ViewGroup)
 
@@ -28,22 +21,22 @@ class ChatListViewHolder(parent: ViewGroup)
 
     init {
 
-        imgProfile = itemView.findViewById(R.id.imgbProfile)
+        imgProfile = itemView.findViewById(R.id.imgProfile)
         txtUserName = itemView.findViewById(R.id.txtUserName)
         txtUserMessage = itemView.findViewById(R.id.txtUserMessage)
         txtDate = itemView.findViewById(R.id.txtDate)
     }
 
-    fun bind(chatModel: ChatModel, onItemClickListener: (chatModel: ChatModel) -> Unit) {
+    fun bind(chatEntity: ChatEntity, onItemClickListener: (chatEntity: ChatEntity) -> Unit) {
 
-        imgProfile.setBackgroundResource(chatModel.profilePhoto)
-        txtUserName.text = chatModel.userName
-        txtUserMessage.text = chatModel.userMessage
-        txtDate.text = chatModel.date
+        imgProfile.setBackgroundResource(chatEntity.profilePhoto)
+        txtUserName.text = chatEntity.userName
+        txtUserMessage.text = chatEntity.userMessage
+        txtDate.text = chatEntity.date
 
         itemView.setOnClickListener {
 
-            onItemClickListener(chatModel)
+            onItemClickListener(chatEntity)
         }
     }
 }

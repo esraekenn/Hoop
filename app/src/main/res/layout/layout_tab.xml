@@ -1,33 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
-    android:minHeight="56dp">
-
-    <ImageButton
-        android:id="@+id/imgbCamera"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.20"
-        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:minHeight="56dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="wrap_content">
+    <ImageButton
+        android:layout_width="match_parent"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
-        android:src="@drawable/ic_camera_white" />
+        android:src="@drawable/hoop_camera"
+        android:layout_weight="1.25"
+        android:id="@+id/cameraImg"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="match_parent"/>
 
     <TextView
-        android:id="@+id/txtChats"
-        style="@style/tab"
-        android:text="@string/chats" />
+        android:layout_width="match_parent"
+        android:text="CHATS"
+        android:id="@+id/chatsButton"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:layout_height="match_parent"/>
 
     <TextView
-        android:id="@+id/txtStatus"
-        style="@style/tab"
-        android:text="@string/status" />
+        android:layout_width="match_parent"
+        android:text="STATUS"
+        android:textColor="@android:color/white"
+        android:id="@+id/statusButton"
+        android:layout_weight="1"
+        android:gravity="center"
+            android:layout_height="match_parent"/>
 
     <TextView
-        android:id="@+id/txtCalls"
-        style="@style/tab"
-        android:text="@string/calls" />
+        android:layout_width="match_parent"
+        android:text="CALLS"
+        android:id="@+id/callsButton"
+        android:textColor="@android:color/white"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_height="match_parent"/>
 
-</LinearLayout>
+    </LinearLayout>
+
+
+
+
