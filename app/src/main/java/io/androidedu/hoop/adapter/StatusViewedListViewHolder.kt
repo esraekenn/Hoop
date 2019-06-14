@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import io.androidedu.hoop.R
+import io.androidedu.hoop.model.StatusViewedEntity
 import io.androidedu.hoop.model.StatusViewedModel
 
 
@@ -23,14 +24,14 @@ class StatusViewedListViewHolder(parent: ViewGroup)
 
     }
 
-    fun bind(statusViewedModel: StatusViewedModel, onItemClickListener: (statusViewModel: StatusViewedModel) -> Unit) {
+    fun bind(statusViewedEntity: StatusViewedEntity, onItemClickListener: (statusViewedEntity: StatusViewedEntity) -> Unit) {
 
-        imgProfile.setBackgroundResource(statusViewedModel.profilePhoto)
-        txtUserName.text = statusViewedModel.userName
-        txtDate.text = statusViewedModel.date
+        imgProfile.setBackgroundResource(statusViewedEntity.profilePhoto)
+        txtUserName.text = statusViewedEntity.userName
+        txtDate.text = statusViewedEntity.date
         itemView.setOnClickListener {
 
-            onItemClickListener(statusViewedModel)
+            onItemClickListener(statusViewedEntity)
         }
     }
 }

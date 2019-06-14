@@ -5,7 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import io.androidedu.hoop.R
-import io.androidedu.hoop.model.StatusMutedModel
+import io.androidedu.hoop.model.StatusMutedEntity
 
 
 class StatusMutedListViewHolder(parent: ViewGroup)
@@ -18,21 +18,21 @@ class StatusMutedListViewHolder(parent: ViewGroup)
 
     init {
 
-        imgProfile = itemView.findViewById(R.id.imgProfile)
+        imgProfile = itemView.findViewById(R.id.imgUserProfile)
         txtUserName = itemView.findViewById(R.id.txtUserName)
         txtDate = itemView.findViewById(R.id.txtDate)
 
     }
 
-    fun bind(statusMutedModel: StatusMutedModel, onItemClickListener: (statusMutedModel: StatusMutedModel) -> Unit) {
+    fun bind(statusMutedEntity: StatusMutedEntity, onItemClickListener: (statusMutedEntity: StatusMutedEntity) -> Unit) {
 
-        imgProfile.setBackgroundResource(statusMutedModel.profilePhoto)
-        txtUserName.text = statusMutedModel.userName
-        txtDate.text = statusMutedModel.date
+        imgProfile.setBackgroundResource(statusMutedEntity.profilePhoto)
+        txtUserName.text = statusMutedEntity.userName
+        txtDate.text = statusMutedEntity.date
 
         itemView.setOnClickListener {
 
-            onItemClickListener(statusMutedModel)
+            onItemClickListener(statusMutedEntity)
         }
     }
 }

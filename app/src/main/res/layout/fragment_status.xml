@@ -50,21 +50,28 @@
     <TextView android:layout_width="match_parent"
               android:textStyle="bold"
               android:text="VIEWED UPDATE"
-
               android:layout_height="wrap_content"/>
+    <FrameLayout android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/recycStatusViewedList"
     />
+    </FrameLayout>
     <TextView android:layout_width="match_parent"
               android:textStyle="bold"
               android:text="MUTED UPDATE"
 
               android:layout_height="wrap_content"/>
+    <FrameLayout android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/recycStatusMutedList"
     />
+    </FrameLayout>
+
 </LinearLayout>
