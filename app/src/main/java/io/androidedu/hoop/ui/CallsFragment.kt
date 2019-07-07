@@ -26,22 +26,27 @@ class CallsFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val callEntity= CallEntity(0,
-            R.drawable.hoop_user_icon_g,
-            "Esra EKEN",
-            "Today",
+            R.drawable.user_photo_girl1,
+            "Best",
+            "Today,",
             "22.15",
             R.drawable.hoop_call_c,
             R.drawable.hoop_call
             )
+        val callEntity2= CallEntity(1,
+            R.drawable.user_photo_boy2,
+            "Honey",
+            "Yesterday,",
+            "12.42",
+            R.drawable.hoop_call2,
+            R.drawable.hoop_video_call
+        )
 
         thread ( start=true )
         {
             callDao?.addNewCall(callEntity)
-            callDao?.addNewCall(callEntity)
-            callDao?.addNewCall(callEntity)
-            callDao?.addNewCall(callEntity)
-            callDao?.addNewCall(callEntity)
-            callDao?.addNewCall(callEntity)
+            callDao?.addNewCall(callEntity2)
+
         }
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

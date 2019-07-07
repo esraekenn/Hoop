@@ -2,6 +2,7 @@ package io.androidedu.hoop.ui
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
@@ -11,6 +12,7 @@ import io.androidedu.hoop.R
 import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), TabLayout.BaseOnTabSelectedListener<TabLayout.Tab>,
     ViewPager.OnPageChangeListener {
+
     override fun onPageScrollStateChanged(state: Int) {
 
     }
@@ -47,6 +49,8 @@ class MainActivity : AppCompatActivity(), TabLayout.BaseOnTabSelectedListener<Ta
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        toolbar.title = "Hoop"
+        setSupportActionBar(toolbar)
 
         val fragmentList = ArrayList<Fragment>()
         fragmentList.add(cameraFragment)

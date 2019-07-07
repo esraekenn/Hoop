@@ -10,7 +10,7 @@ import io.androidedu.hoop.model.StatusMutedEntity
 import io.androidedu.hoop.model.StatusRecentEntity
 import io.androidedu.hoop.model.StatusViewedEntity
 
-@Database(entities = [StatusViewedEntity::class], version = 1)
+@Database(entities = [StatusViewedEntity::class], version = 2)
 abstract class StatusViewedDB: RoomDatabase() {
 
     abstract fun getStatusViewedDao(): StatusViewedDao

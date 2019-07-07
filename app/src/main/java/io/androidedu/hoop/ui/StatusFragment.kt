@@ -4,25 +4,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.Observer
-import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.androidedu.hoop.R
 import io.androidedu.hoop.adapter.*
-import io.androidedu.hoop.dao.ChatDao
 import io.androidedu.hoop.dao.StatusMutedDao
 import io.androidedu.hoop.dao.StatusRecentDao
 import io.androidedu.hoop.dao.StatusViewedDao
-import io.androidedu.hoop.db.HoopDB
 import io.androidedu.hoop.db.StatusMutedDB
 import io.androidedu.hoop.db.StatusRecentDB
 import io.androidedu.hoop.db.StatusViewedDB
-import io.androidedu.hoop.model.ChatEntity
 import io.androidedu.hoop.model.StatusMutedEntity
 import io.androidedu.hoop.model.StatusRecentEntity
 import io.androidedu.hoop.model.StatusViewedEntity
-import kotlinx.android.synthetic.main.fragment_chats.*
 import kotlinx.android.synthetic.main.fragment_status.*
 import kotlin.concurrent.thread
 
@@ -44,39 +38,30 @@ class StatusFragment : Fragment() {
         super.onCreate(savedInstanceState)
         val statusmMutedEntity= StatusMutedEntity(
             0,
-            profilePhoto = R.drawable.hoop_user_photo,
-            userName="ESRA",
-            date = "YESETERDAY")
+            profilePhoto = R.drawable.user_photo_girl5,
+            userName="Bestt",
+            date = "15.21")
+
         thread ( start=true )
         {
-            statusMutedDao?.addNewStatusMuted(statusmMutedEntity)
-            statusMutedDao?.addNewStatusMuted(statusmMutedEntity)
-            statusMutedDao?.addNewStatusMuted(statusmMutedEntity)
-            statusMutedDao?.addNewStatusMuted(statusmMutedEntity)
             statusMutedDao?.addNewStatusMuted(statusmMutedEntity)
         }
         val statusViewedEntity= StatusViewedEntity(
             0,
-            profilePhoto = R.drawable.hoop_user_photo,
-            userName="ESRA",
-            date = "YESETERDAY")
+            profilePhoto = R.drawable.user_photo_girl3,
+            userName="Bestt",
+            date = "15.21")
         thread ( start=true )
         {
-            statusViewedDao?.addNewStatusViewed(statusViewedEntity)
-            statusViewedDao?.addNewStatusViewed(statusViewedEntity)
-            statusViewedDao?.addNewStatusViewed(statusViewedEntity)
             statusViewedDao?.addNewStatusViewed(statusViewedEntity)
         }
         val statusRecentEntity= StatusRecentEntity(
             0,
-            profilePhoto = R.drawable.hoop_user_photo,
-            userName="ESRA",
-            date = "YESETERDAY")
+            profilePhoto = R.drawable.user_photo_girl4,
+            userName="Bestt",
+            date = "15.21")
         thread ( start=true )
         {
-            statusRecentDao?.addNewStatusRecent(statusRecentEntity)
-            statusRecentDao?.addNewStatusRecent(statusRecentEntity)
-            statusRecentDao?.addNewStatusRecent(statusRecentEntity)
             statusRecentDao?.addNewStatusRecent(statusRecentEntity)
         }
     }

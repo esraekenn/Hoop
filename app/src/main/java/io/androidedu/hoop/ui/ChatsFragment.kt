@@ -26,22 +26,31 @@ class ChatsFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val chatEntity=ChatEntity(
-            profilePhoto = R.drawable.hoop_user_photo,
-            userName="ESRA",
-            userMessage = "merhaba",
-            date = "YESETERDAY")
+            profilePhoto = R.drawable.user_photo_girl5,
+            userName="Bestt",
+            userMessage = "Merhaba,yaz mevsimi gerçekten çok berbat bıktımm",
+            date = "Dün")
         val chatEntity2=ChatEntity(
-            profilePhoto = R.drawable.hoop_user_photo,
-            userName="ESRA",
-            userMessage = "merhaba",
-            date = "YESETERDAY")
+            profilePhoto = R.drawable.user_photo_girl1,
+            userName="My dear..",
+            userMessage = "Selamlar,kış mevsimi bir şaheserdir Norveç'e taşınalım ",
+            date = "16.19")
+        val chatEntity3=ChatEntity(
+            profilePhoto = R.drawable.user_photo_girl2,
+            userName="Honeyyyy!",
+            userMessage = "Selamlar,kış mevsimi bir şaheserdir Norveç'e taşınalım ",
+            date = "16.24")
+        val chatEntity4=ChatEntity(
+            profilePhoto = R.drawable.user_photo_girl3,
+            userName="Cow",
+            userMessage = "Selamlar,kış mevsimi bir şaheserdir Norveç'e taşınalım ",
+            date = "17.29")
         thread ( start=true )
         {
             chatDao?.addNewChat(chatEntity)
-            chatDao?.addNewChat(chatEntity2)
-            chatDao?.addNewChat(chatEntity)
-            chatDao?.addNewChat(chatEntity)
-            chatDao?.addNewChat(chatEntity)
+            //chatDao?.addNewChat(chatEntity2)
+            //chatDao?.addNewChat(chatEntity3)
+            chatDao?.addNewChat(chatEntity4)
 
         }
     }
